@@ -209,8 +209,9 @@ https://epimax-backend-kr7u.onrender.com
 
 ### Summary
 
-- This backend serves as the foundation for a Task Management Platform, offering essential functionalities such as user registration, authentication, task creation, retrieval, update, and deletion.
+- This backend serves as the foundation for a Task Management Platform, offering essential functionalities
+ such as user registration, authentication, task creation, retrieval, update, and deletion.
 - It leverages modern technologies like Express, Mongoose, and JWT for efficient and secure operations.
-- Detailed documentation is provided for each API endpoint, facilitating easy integration with frontend applications and ensuring smooth interaction with the backend.
-- Encapsulation principles and middleware usage enhance code organization, maintainability, and security.
+- Detailed documentation is provided for each API endpoints and ensuring smooth interaction with the backend.
 ```
+
