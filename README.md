@@ -1,4 +1,4 @@
-## This is Task Management Platform Backend with `Express`, `Zod`, `Nodemon`, `JWT`, `Mongoose`
+## This is Task Management Platform Backend with `Express`, `Nodemon`, `JWT`, `Mongoose`
 
 ### Functionality
 
@@ -177,12 +177,6 @@ https://epimax-backend-kr7u.onrender.com
   {
     "description": "Updated Task Description",
     "completed": true
-  }
-  ```
-- Response:
-  ```json
-  {
-    "message": "Task Updated Successfully"
   }
   ```
   - Output:
