@@ -41,6 +41,21 @@ https://epimax-backend-kr7u.onrender.com
    ```bash
     nodemon index.js
    ```
+##Test Cases Overview
+
+The test cases cover various aspects of the backend functionalities, ensuring that each feature works as expected and meets the requirements. Here's an overview of the test cases included:
+
+1. **User Management Endpoints:**
+   - Register a new user successfully.
+   - Login an existing user successfully.
+
+2. **Task Management Endpoints:**
+   - Create a new task successfully.
+   - Retrieve all tasks successfully.
+   - Retrieve a specific task successfully.
+   - Update a specific task successfully.
+   - Delete a specific task successfully.
+![image](images/testcases.png)
 
 ### API Documentation
 
