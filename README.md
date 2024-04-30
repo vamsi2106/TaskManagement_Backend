@@ -1,4 +1,4 @@
-## This is Task Management Platform Backend with `Express`, `Nodemon`, `JWT`, `Mongoose`
+## This is Task Management Platform Backend with `Express`, `Nodemon`, `JWT`, `Mongoose` , `jest`, `supertest`
 
 ### Functionality
 
