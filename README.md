@@ -1,4 +1,4 @@
-## This is Task Management Platform Backend with `Express`, `Nodemon`, `JWT`, `Mongoose` , `jest`, `supertest`
+## This is Task Management Platform Backend with `Express`, `Nodemon`, `JWT`, `Mongoose` 
 
 ### Functionality
 
@@ -10,7 +10,7 @@
 - Designed routes for user registration, login, and profile management.
 - Implemented routes for CRUD operations on tasks.
 - Used middlewares for authentication to secure the API.
-- used jest and supertest for testing environment
+
 
 ### Deployment
 
@@ -206,24 +206,6 @@ https://epimax-backend-kr7u.onrender.com
 
   ![images](images/DELETETASK.png)
 
-### Test Cases Overview
-
-The test cases cover various aspects of the backend functionalities, ensuring that each feature works as expected and meets the requirements. Here's an overview of the test cases included:
-
-1. **User Management Endpoints:**
-   - Register a new user successfully.
-   - Login an existing user successfully.
-
-2. **Task Management Endpoints:**
-   - Create a new task successfully.
-   - Retrieve all tasks successfully.
-   - Retrieve a specific task successfully.
-   - Update a specific task successfully.
-   - Delete a specific task successfully.
-3. **To Run Test cases:**
-   `npm test`
-
-![image](images/testcases.png)
 
 ### Summary
 
