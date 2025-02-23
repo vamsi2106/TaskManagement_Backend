@@ -1,0 +1,318 @@
+openapi: 3.0.0
+info:
+  title: Task Management Platform API
+  description: API for managing users and tasks in a Task Management Platform.
+  version: 1.0.0
+servers:
+  - url: https://epimax-backend-kr7u.onrender.com
+    description: Production server
+
+paths:
+  /users/register:
+    post:
+      summary: Register a new user
+      description: Register a new user with name, email, and password.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: NagasaiVamsi
+                email:
+                  type: string
+                  example: saivamsi1121@gmail.com
+                password:
+                  type: string
+                  example: password123
+      responses:
+        '200':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      email:
+                        type: string
+                      password:
+                        type: string
+                      _id:
+                        type: string
+                      __v:
+                        type: integer
+                  message:
+                    type: string
+
+  /users/login:
+    post:
+      summary: Login a user
+      description: Login a user with email and password.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: vamsi@gmail.com
+                password:
+                  type: string
+                  example: password123
+      responses:
+        '200':
+          description: User logged in successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      name:
+                        type: string
+                      email:
+                        type: string
+                      password:
+                        type: string
+                      __v:
+                        type: integer
+                  token:
+                    type: string
+                  message:
+                    type: string
+
+  /tasks:
+    post:
+      summary: Create a new task
+      description: Create a new task with a description and completion status.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  example: update code changes to git
+                completed:
+                  type: boolean
+                  example: false
+      responses:
+        '200':
+          description: Task created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task:
+                    type: object
+                    properties:
+                      description:
+                        type: string
+                      completed:
+                        type: boolean
+                      owner:
+                        type: string
+                      _id:
+                        type: string
+                      createdAt:
+                        type: string
+                      updatedAt:
+                        type: string
+                      __v:
+                        type: integer
+                  message:
+                    type: string
+
+    get:
+      summary: Get all tasks
+      description: Retrieve all tasks for the authenticated user.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Tasks fetched successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tasks:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                        description:
+                          type: string
+                        completed:
+                          type: boolean
+                        owner:
+                          type: string
+                        createdAt:
+                          type: string
+                        updatedAt:
+                          type: string
+                        __v:
+                          type: integer
+                  count:
+                    type: integer
+                  message:
+                    type: string
+
+  /tasks/{id}:
+    get:
+      summary: Get a specific task
+      description: Retrieve a specific task by its ID.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task fetched successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      description:
+                        type: string
+                      completed:
+                        type: boolean
+                      owner:
+                        type: string
+                      createdAt:
+                        type: string
+                      updatedAt:
+                        type: string
+                      __v:
+                        type: integer
+                  message:
+                    type: string
+
+    put:
+      summary: Update a specific task
+      description: Update a specific task by its ID.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  example: Updated Task Description
+                completed:
+                  type: boolean
+                  example: true
+      responses:
+        '200':
+          description: Task updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      description:
+                        type: string
+                      completed:
+                        type: boolean
+                      owner:
+                        type: string
+                      createdAt:
+                        type: string
+                      updatedAt:
+                        type: string
+                      __v:
+                        type: integer
+                  message:
+                    type: string
+
+    delete:
+      summary: Delete a specific task
+      description: Delete a specific task by its ID.
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      description:
+                        type: string
+                      completed:
+                        type: boolean
+                      owner:
+                        type: string
+                      createdAt:
+                        type: string
+                      updatedAt:
+                        type: string
+                      __v:
+                        type: integer
+                  message:
+                    type: string
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

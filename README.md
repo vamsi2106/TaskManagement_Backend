@@ -20,6 +20,12 @@ The backend is deployed on the Render platform and can be accessed at:
 https://epimax-backend-kr7u.onrender.com
 ```
 
+Swagger Documentation: 
+
+```bash
+https://epimax-backend-kr7u.onrender.com/api-docs
+```
+
 ### Setup
 
 1. Clone the repository:
