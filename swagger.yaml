@@ -1,11 +1,11 @@
-openapi: 3.1.0
+openapi: 3.0.0
 info:
   title: Task Management Platform API
   description: API for managing users and tasks in a Task Management Platform.
   version: 1.0.0
 servers:
-  - url: https://epimax-backend-kr7u.onrender.com
-    description: Production server
+  - url: http://localhost:3000
+    description: Local server
 
 paths:
   /users/register:
@@ -219,7 +219,7 @@ paths:
                   message:
                     type: string
 
-    put:
+    patch:
       summary: Update a specific task
       description: Update a specific task by its ID.
       security:
