@@ -6,9 +6,7 @@ info:
 servers:
   - url: https://epimax-backend-kr7u.onrender.com
     description: Production server
-servers:
-  - url: http://localhost:3000
-    description: Local server
+
 
 paths:
   /users/register:
