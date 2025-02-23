@@ -4,6 +4,9 @@ info:
   description: API for managing users and tasks in a Task Management Platform.
   version: 1.0.0
 servers:
+  - url: https://epimax-backend-kr7u.onrender.com
+    description: Production server
+servers:
   - url: http://localhost:3000
     description: Local server
 
